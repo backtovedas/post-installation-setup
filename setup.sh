@@ -6,8 +6,7 @@ sudo pacman -S --noconfirm base-devel git libx11 libxinerama libxft \
     xwallpaper bluez cmake mpv zsh-completions zsh-syntax-highlighting pipewire \
     pipewire-audio pipewire-pulse picom python python-pip python-pywal \
     python-setuptools fzf brightnessctl usbutils intel-ucode intel-media-driver \
-    mesa dosfstools networkmanager ttf-jetbrains-mono ttf-nerd-fonts-symbols-mono noto-fonts-emoji \
-    zsh unzip maim vnstat || exit 1 
+    mesa dosfstools networkmanager ttf-jetbrains-mono ttf-nerd-fonts-symbols-mono noto-fonts-emoji zsh unzip maim vnstat || exit 1 
 
 echo "Changing Shell"
 chsh -s /bin/zsh user
@@ -15,6 +14,7 @@ chsh -s /bin/zsh user
 echo "Setting up dotfiles"
 sleep 2
 git clone --bare https://github.com/shivjeet1/dotfiles.git $HOME/
+rm -rf $HOME/.git
 #rm -rf dotfiles/.git dotfiles/.local/src/*
 #cp -r dotfiles/.* $HOME/
 
@@ -58,5 +58,5 @@ case $USER in
 esac
 cd $HOME/.local/src/slstatus; sudo make clean install
         #cd $HOME/.local/src/dwmblocks; sudo make clean install || sudo make clean install
-[ -d /etc/X11/xorg.conf.d ] || sudo mkdir -p /etc/X11/xorg.config.d
+#[ -d /etc/X11/xorg.conf.d ] || sudo mkdir -p /etc/X11/xorg.config.d
 
