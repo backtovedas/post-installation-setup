@@ -33,11 +33,11 @@ git clone https://github.com/shivjeet1/slstatus.git $HOME/.local/src/slstatus
 git clone https://github.com/shivjeet1/st.git $HOME/.local/src/st
 
 echo "removing irrelevant content"
-sed '/rg/d' -i $XDG_CACHE_HOME/wal/colors-wal-dwm.h
-sed '31s/0/256/' -i $XDG_CACHE_HOME/wal/colors-wal-st.h
-sed '24s/"[^"]*]"/"#000000"/' -i $XDG_CACHE_HOME/wal/colors-wal-dmenu.h
-sed "s/.*foreground.*$(grep foreground $XDG_CACHE_HOME/wal/colors.Xresources | head -n 1 | sed s/\*/Sxiv\./g)/" -i $XRESOURCES
-sed "s/.*background.*/$(grep background $XDG_CACHE_HOME/wal/colors.Xresources | head -n 1 | sed s/\*/Sxiv\./g)/" -i $XRESOURCES
+sed '/urg/d' -i /home/$USER/.cache/wal/colors-wal-dwm.h
+sed '31s/0/256/' -i /home/$USER/.cache/wal/colors-wal-st.h
+sed '24s/"[^"]*]"/"#000000"/' -i /home/$USER/.cache/wal/colors-wal-dmenu.h
+sed "s/.*foreground.*$(grep foreground /home/$USER/.cache/wal/colors.Xresources | head -n 1 | sed s/\*/Sxiv\./g)/" -i $XRESOURCES
+sed "s/.*background.*/$(grep background /home/$USER/.cache/wal/colors.Xresources | head -n 1 | sed s/\*/Sxiv\./g)/" -i $XRESOURCES
 
 user_correction(){
  	sed -i "s/shiv/$USER/" $HOME/.local/src/dwm/config.h
