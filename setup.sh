@@ -13,10 +13,10 @@ chsh -s /bin/zsh user
 
 echo "Setting up dotfiles"
 sleep 2
-git clone --bare https://github.com/shivjeet1/dotfiles.git $HOME/
-rm -rf $HOME/.git
+git clone https://github.com/shivjeet1/dotfiles.git $HOME/
+rm -rf $HOME/dotfiles/.git
 #rm -rf dotfiles/.git dotfiles/.local/src/*
-#cp -r dotfiles/.* $HOME/
+cp -r dotfiles/.* $HOME/
 
 echo "configuring . . ."
 sleep 1
