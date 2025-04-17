@@ -33,14 +33,14 @@ git clone https://github.com/shivjeet1/slstatus.git $HOME/.local/src/slstatus
 git clone https://github.com/shivjeet1/st.git $HOME/.local/src/st
 
 echo "removing irrelevant content"
-sed '/urg/d' -i $XDG_CACHE_HOME/wal/colors-wal-dwm.h
+sed '/rg/d' -i $XDG_CACHE_HOME/wal/colors-wal-dwm.h
 sed '31s/0/256/' -i $XDG_CACHE_HOME/wal/colors-wal-st.h
 sed '24s/"[^"]*]"/"#000000"/' -i $XDG_CACHE_HOME/wal/colors-wal-dmenu.h
 sed "s/.*foreground.*$(grep foreground $XDG_CACHE_HOME/wal/colors.Xresources | head -n 1 | sed s/\*/Sxiv\./g)/" -i $XRESOURCES
 sed "s/.*background.*/$(grep background $XDG_CACHE_HOME/wal/colors.Xresources | head -n 1 | sed s/\*/Sxiv\./g)/" -i $XRESOURCES
 
 user_correction(){
-	sed -i "s/shiv/$USER/" $HOME/.local/src/dwm/config.h
+ 	sed -i "s/shiv/$USER/" $HOME/.local/src/dwm/config.h
 	sed -i "s/shiv/$USER/" $HOME/.local/src/st/config.h 
 	sed -i "s/shiv/$USER/" $HOME/.local/src/dmenu/config.h
 	cd $HOME/.local/src/dwm; sudo make clean install
@@ -50,7 +50,10 @@ user_correction(){
 
 case $USER in
 	user)
-		cd $HOME/.local/src/dwm; sudo make clean install
+		sed -i "s/shiv/$USER/" $HOME/.local/src/dwm/config.h
+	    sed -i "s/shiv/$USER/" $HOME/.local/src/st/config.h 
+    	sed -i "s/shiv/$USER/" $HOME/.local/src/dmenu/config.h
+	    cd $HOME/.local/src/dwm; sudo make clean install
 		cd $HOME/.local/src/st; sudo make clean install
 		cd $HOME/.local/src/dmenu; sudo make clean install
        ;;
