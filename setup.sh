@@ -7,7 +7,7 @@ sudo pacman -S --noconfirm base-devel git libx11 libxinerama libxft \
     pipewire-audio pipewire-pulse picom python python-pip python-pywal \
     python-setuptools fzf brightnessctl usbutils intel-ucode intel-media-driver \
     mesa dosfstools networkmanager ttf-jetbrains-mono ttf-nerd-fonts-symbols-mono noto-fonts-emoji \
-    zsh 
+    zsh unzip maim vnstat | | exit 1 
 
 echo "Changing Shell"
 chsh -s /bin/zsh user
@@ -15,7 +15,7 @@ chsh -s /bin/zsh user
 echo "Setting up dotfiles"
 sleep 2
 git clone https://github.com/shivjeet1/dotfiles.git
-cp -r dotfiles/* $HOME/
+cp -r dotfiles/.* $HOME/
 
 echo "configuring . . ."
 sleep 1
