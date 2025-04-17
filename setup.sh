@@ -40,7 +40,6 @@ user_correction(){
 	cd $HOME/.local/src/dwm; sudo make clean install
 	cd $HOME/.local/src/st; sudo make clean install
 	cd $HOME/.local/src/dmenu; sudo make clean install
-    cd $HOME/.local/src/slstatus; sudo make clean install
 }
 
 case $USER in
@@ -48,13 +47,12 @@ case $USER in
 		cd $HOME/.local/src/dwm; sudo make clean install
 		cd $HOME/.local/src/st; sudo make clean install
 		cd $HOME/.local/src/dmenu; sudo make clean install
-        cd $HOME/.local/src/slstatus; sudo make clean install
-        ;;
+       ;;
 	*)
 		user_correction
 		;;
 esac
-
-#cd $HOME/.local/src/dwmblocks; sudo make clean install || sudo make clean install
+cd $HOME/.local/src/slstatus; sudo make clean install
+        #cd $HOME/.local/src/dwmblocks; sudo make clean install || sudo make clean install
 
 
