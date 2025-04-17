@@ -15,7 +15,7 @@ chsh -s /bin/zsh user
 echo "Setting up dotfiles"
 sleep 2
 git clone https://github.com/shivjeet1/dotfiles.git
-rm -rf dotfiles/.git
+rm -rf dotfiles/.git dotfiles/.local/src/*
 cp -r dotfiles/.* $HOME/
 
 echo "configuring . . ."
@@ -38,9 +38,9 @@ git clone https://github.com/shivjeet1/slstatus.git $HOME/.local/src/slstatus
 git clone https://github.com/shivjeet1/st.git $HOME/.local/src/st
 
 user_correction(){
-	sed -i "s/shiv/$USER/" $HOME/.local/src/dwm/config.h
-	sed -i "s/shiv/$USER/" $HOME/.local/src/st/config.h 
-	sed -i "s/shiv/$USER/" $HOME/.local/src/dmenu/config.h
+	sed -i "s/Shiv/$USER/" $HOME/.local/src/dwm/config.h
+	sed -i "s/Shiv/$USER/" $HOME/.local/src/st/config.h 
+	sed -i "s/Shiv/$USER/" $HOME/.local/src/dmenu/config.h
 	cd $HOME/.local/src/dwm; sudo make clean install
 	cd $HOME/.local/src/st; sudo make clean install
 	cd $HOME/.local/src/dmenu; sudo make clean install
