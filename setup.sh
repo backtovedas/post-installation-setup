@@ -6,9 +6,13 @@ sudo pacman -Sy --noconfirm base-devel git libx11 libxinerema libxft xf86-input-
     python python-pip python-pywal python-setuptools fzf brightnessctl usbutils intel-ucode intel-media-driver mesa dosfstools \
     networkmanager ttf-jetbrains-mono ttf-nerd-fonts-symbols-mono noto-fonts-emoji
 
+echo "Changing Shell"
+chsh -s /bin/zsh user
+
 echo "Setting up dotfiles"
 sleep 2
-git clone --bare https://github.com/shivjeet1/dotfiles.git $HOME/.dotfiles/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME checkout
+git clone https://github.com/shivjeet1/dotfiles.git
+cp -r dotfiles/* $HOME/
 
 echo "configuring . . ."
 sleep 1
@@ -30,9 +34,9 @@ git clone https://github.com/shivjeet1/slstatus.git $HOME/.local/src/slstatus
 git clone https://github.com/shivjeet1/st.git $HOME/.local/src/st
 
 user_correction(){
-	sed -i "s/shiv/$USER/" $HOME/.local/src/dwm/config.h
-	sed -i "s/shiv/$USER/" $HOME/.local/src/st/config.h 
-	sed -i "s/shiv/$USER/" $HOME/.local/src/dmenu/config.h
+	sed -i "s/user/$USER/" $HOME/.local/src/dwm/config.h
+	sed -i "s/user/$USER/" $HOME/.local/src/st/config.h 
+	sed -i "s/user/$USER/" $HOME/.local/src/dmenu/config.h
 	cd $HOME/.local/src/dwm; sudo make clean install
 	cd $HOME/.local/src/st; sudo make clean install
 	cd $HOME/.local/src/dmenu; sudo make clean install
