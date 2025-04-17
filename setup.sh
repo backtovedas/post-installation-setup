@@ -62,6 +62,24 @@ case $USER in
 		;;
 esac
 cd $HOME/.local/src/slstatus; sudo make clean install
-        #cd $HOME/.local/src/dwmblocks; sudo make clean install || sudo make clean install
+
+echo "Setting-up Xinitrc"
+echo -e "#!/bin/sh
+
+#$HOME/Shiv/Linux/suckless/some_scripts/bin/setwall &
+picom &
+xwallpaper --zoom $(cat ~/.cache/wal/wal) &
+xrdb $HOME/.cache/wal/colors.Xresources
+slstatus &
+
+#while true; do
+#	dwm >/dev/null 2>&1
+#done
+exec dwm
+#dbus-run-session /usr/bin/local/dwm" >> $HOME/.xinitrc
+
+cat $HOME/.config/zsh/.zshrc > $HOMW/.zshrc
+
+#cd $HOME/.local/src/dwmblocks; sudo make clean install || sudo make clean install
 #[ -d /etc/X11/xorg.conf.d ] || sudo mkdir -p /etc/X11/xorg.config.d
 
