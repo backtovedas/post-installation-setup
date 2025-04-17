@@ -14,15 +14,15 @@ chsh -s /bin/zsh user
 
 echo "Setting up dotfiles"
 sleep 2
-git clone https://github.com/shivjeet1/dotfiles.git
-rm -rf dotfiles/.git dotfiles/.local/src/*
-cp -r dotfiles/.* $HOME/
+git clone --bare https://github.com/shivjeet1/dotfiles.git $HOME/
+#rm -rf dotfiles/.git dotfiles/.local/src/*
+#cp -r dotfiles/.* $HOME/
 
 echo "configuring . . ."
 sleep 1
 export DISPLAY=3
 
-#source $HOME/.zprofile 2> /dev/null
+source $HOME/.zprofile 2> /dev/null
 wal -s -i $HOME/post-installation-setup/art.jpg
 sed '/urg/d' -i $XDG_CACHE_HOME/wal/colors-wal-dwm.h
 sed '31s/0/256/' -i $XDG_CACHE_HOME/wal/colors-wal-st.h
