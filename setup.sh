@@ -26,10 +26,10 @@ source $HOME/.zprofile 2> /dev/null
 wal -s -i $HOME/post-installation-setup/art.jpg
 echo "Setting up DWM"
 mkdir -p $HOME/.local/src/
-git clone https://github.com/shivjeet1/dwm.git $HOME/.local/src/dwm/
-git clone https://github.com/shivjeet1/dmenu.git $HOME/.local/src/dmenu/
-git clone https://github.com/shivjeet1/slstatus.git $HOME/.local/src/slstatus/
-git clone https://github.com/shivjeet1/st.git $HOME/.local/src/st/
+git clone https://github.com/shivjeet1/dwm.git $HOME/.local/src/
+git clone https://github.com/shivjeet1/dmenu.git $HOME/.local/src/
+git clone https://github.com/shivjeet1/slstatus.git $HOME/.local/src/
+git clone https://github.com/shivjeet1/st.git $HOME/.local/src/
 
 echo "removing irrelevant content"
 sed '/urg/d' -i $XDG_CACHE_HOME/wal/colors-wal-dwm.h
