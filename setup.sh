@@ -25,7 +25,7 @@ source $HOME/.zprofile 2> /dev/null
 wal -s -i $HOME/post-installation-setup/art.jpg
 sed '/urg/d' -i $XDG_CACHE_HOME/wal/colors-wal-dwm.h
 sed '31s/0/256/' -i $XDG_CACHE_HOME/wal/colors-wal-st.h
-
+sed '24s/"[^"]*]"/"#000000"/' -i $XDG_CACHE_HOME/wal/colors-wal-dmenu.h
 sed "s/.*foreground.*$(grep foreground $XDG_CACHE_HOME/wal/colors.Xresources | head -n 1 | sed s/\*/Sxiv\./g)/" -i $XRESOURCES
 sed "s/.*background.*/$(grep background $XDG_CACHE_HOME/wal/colors.Xresources | head -n 1 | sed s/\*/Sxiv\./g)/" -i $XRESOURCES
 
@@ -57,5 +57,5 @@ case $USER in
 esac
 cd $HOME/.local/src/slstatus; sudo make clean install
         #cd $HOME/.local/src/dwmblocks; sudo make clean install || sudo make clean install
-
+[ -d /etc/X11/xorg.conf.d ] || sudo mkdir -p /etc/X11/xorg.config.d
 
