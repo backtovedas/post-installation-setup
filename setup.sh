@@ -31,16 +31,16 @@ sed "s/.*foreground.*$(grep foreground $XDG_CACHE_HOME/wal/colors.Xresources | h
 sed "s/.*background.*/$(grep background $XDG_CACHE_HOME/wal/colors.Xresources | head -n 1 | sed s/\*/Sxiv\./g)/" -i $XRESOURCES
 
 echo "Setting up DWM"
-mkdir -p $HOME/.local/src
-git clone https://github.com/shivjeet1/dwm.git $HOME/.local/src/dwm
-git clone https://github.com/shivjeet1/dmenu.git $HOME/.local/src/dmenu
-git clone https://github.com/shivjeet1/slstatus.git $HOME/.local/src/slstatus
-git clone https://github.com/shivjeet1/st.git $HOME/.local/src/st
+mkdir -p $HOME/.local/src/
+git clone --bare https://github.com/shivjeet1/dwm.git $HOME/.local/src/dwm/
+git clone --bare https://github.com/shivjeet1/dmenu.git $HOME/.local/src/dmenu/
+git clone --bare https://github.com/shivjeet1/slstatus.git $HOME/.local/src/slstatus/
+git clone --bare https://github.com/shivjeet1/st.git $HOME/.local/src/st/
 
 user_correction(){
-	sed -i "s/Shiv/$USER/" $HOME/.local/src/dwm/config.h
-	sed -i "s/Shiv/$USER/" $HOME/.local/src/st/config.h 
-	sed -i "s/Shiv/$USER/" $HOME/.local/src/dmenu/config.h
+	sed -i "s/shiv/$USER/" $HOME/.local/src/dwm/config.h
+	sed -i "s/shiv/$USER/" $HOME/.local/src/st/config.h 
+	sed -i "s/shiv/$USER/" $HOME/.local/src/dmenu/config.h
 	cd $HOME/.local/src/dwm; sudo make clean install
 	cd $HOME/.local/src/st; sudo make clean install
 	cd $HOME/.local/src/dmenu; sudo make clean install
