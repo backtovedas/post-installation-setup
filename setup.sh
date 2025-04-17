@@ -25,10 +25,7 @@ export DISPLAY=3
 source $HOME/.zprofile 2> /dev/null
 wal -s -i $HOME/post-installation-setup/art.jpg
 echo "Setting up DWM"
-mkdir -p $HOME/.local/src/dwm
-mkdir -p $HOME/.local/src/dmenu
-mkdir -p $HOME/.local/src/slstatus
-mkdir -p $HOME/.local/src/st
+mkdir -p $HOME/.local/src/
 
 git clone https://github.com/shivjeet1/dwm.git $HOME/.local/src/dwm
 git clone https://github.com/shivjeet1/dmenu.git $HOME/.local/src/dmenu
