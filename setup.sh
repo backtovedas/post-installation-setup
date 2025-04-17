@@ -1,7 +1,10 @@
 echo "Proceeding with post installation"
 echo "Installing Packages..."
 
-sudo pacman -Sy --noconfirm base-devel git libx11 libxinerema libxft xf86-input-synaptics xf86-video-intel xorg-server xorg-xinit xorg-xrandr xwallpaper bluez cmake mpv zsh-completions zsh-syntax-highlighting pipewire pipewire-audio pipewire-pulse picom python python-pip python-pywal python-setuptools fzf brightnessctl usbutils intel-ucode intel-media-driver mesa dosfstools networkmanager ttf-jetbrains-mono ttf-nerd-fonts-symbols-mono noto-fonts-emoji
+sudo pacman -Sy --noconfirm base-devel git libx11 libxinerema libxft xf86-input-synaptics xf86-video-intel xorg-server xorg-xinit \
+    xorg-xrandr xwallpaper bluez cmake mpv zsh-completions zsh-syntax-highlighting pipewire pipewire-audio pipewire-pulse picom \
+    python python-pip python-pywal python-setuptools fzf brightnessctl usbutils intel-ucode intel-media-driver mesa dosfstools \
+    networkmanager ttf-jetbrains-mono ttf-nerd-fonts-symbols-mono noto-fonts-emoji
 
 echo "Setting up dotfiles"
 sleep 2
@@ -12,7 +15,7 @@ sleep 1
 export DISPLAY=3
 
 source $HOME/.zprofile 2> /dev/null
-wal -s -i $HOME/post-installation-script/art.jpg
+wal -s -i $HOME/post-installation-setup/art.jpg
 sed '/urg/d' -i $XDG_CACHE_HOME/wal/colors-wal-dwm.h
 sed '31s/0/256/' -i $XDG_CACHE_HOME/wal/colors-wal-st.h
 
