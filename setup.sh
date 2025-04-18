@@ -78,7 +78,7 @@ slstatus &
 exec dwm
 #dbus-run-session /usr/bin/local/dwm" >> $HOME/.xinitrc
 
-cat $HOME/.config/zsh/.zshrc > $HOMW/.zshrc
+cp $HOME/.config/zsh/.zshrc $HOME/.zshrc
 
 #cd $HOME/.local/src/dwmblocks; sudo make clean install || sudo make clean install
 #[ -d /etc/X11/xorg.conf.d ] || sudo mkdir -p /etc/X11/xorg.config.d
