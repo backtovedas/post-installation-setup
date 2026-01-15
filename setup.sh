@@ -15,7 +15,7 @@ echo "Setting up dotfiles"
 sleep 2
 git clone https://github.com/shivjeet1/dotfiles.git $HOME/dotfiles
 rm -rf $HOME/dotfiles/.git
-#rm -rf dotfiles/.git dotfiles/.local/src/*
+#rm -rf dotfiles/.git dotfiles/.local/src/* 
 cp -r dotfiles/.* $HOME/
 
 echo "configuring . . ."
@@ -24,6 +24,7 @@ export DISPLAY=3
 
 source $HOME/.zprofile 2> /dev/null
 wal -s -i $HOME/post-installation-setup/art.jpg
+xwallpaper --zoom "$HOME/post-installation-setup/art.jpg"
 echo "Setting up DWM"
 mkdir -p $HOME/.local/src/
 
